@@ -2,6 +2,7 @@
 
 namespace Escherchia\ProcessEngineCore\Model;
 
+use Escherchia\ProcessEngineCore\Exceptions\ProcessModelConfigurationIsNotValid;
 use Escherchia\ProcessEngineCore\Model\Elements\Activity;
 use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
 
@@ -26,6 +27,10 @@ class ModelBuilder
      */
     public static function buildFromArray(array $configuration): Model
     {
+        if (!ModelValidator::validateConfigurationArray($configuration)) {
+            throw new ProcessModelConfigurationIsNotValid();
+        }
+
         $modelBuilder = new static();
 
         $modelBuilder->registerActivities(

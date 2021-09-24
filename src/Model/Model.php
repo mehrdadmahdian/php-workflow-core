@@ -3,9 +3,10 @@
 namespace Escherchia\ProcessEngineCore\Model;
 
 use Escherchia\ProcessEngineCore\Contracts\ModelElementContainerInterface;
+use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
 use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
 
-class Model
+class Model implements ModelInterface
 {
     /**
      * @var ModelElementContainerInterface
