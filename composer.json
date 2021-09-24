@@ -1,14 +1,32 @@
 {
     "name": "escherchia/business-process-engine",
-    "description": "A Simple Engine for Simple Business Processes",
+    "description": "A Simple PHP Engine for Simple Business Processes",
     "type": "library",
-    "license": "mIT",
+    "license": "MIT",
     "authors": [
         {
-            "name": "mehrdad Mahdian",
+            "name": "Mehrdad Mahdian",
             "email": "escherchia88@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Escherchia\\ProcessEngine\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\" : "tests"
+        }
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "scripts": {
+        "post-package-install": [
+            "php -r \"copy('src/config.php', '../../config/business-process-engine.php');\""
+        ]
+    }
 }
