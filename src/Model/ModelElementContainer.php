@@ -1,9 +1,9 @@
 <?php
 
-namespace Escherchia\ProcessEngine\Model;
+namespace Escherchia\ProcessEngineCore\Model;
 
-use Escherchia\ProcessEngine\Contracts\ModelElementContainerInterface;
-use Escherchia\ProcessEngine\Model\Elements\ElementInterface;
+use Escherchia\ProcessEngineCore\Contracts\ModelElementContainerInterface;
+use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
 
 class ModelElementContainer implements ModelElementContainerInterface
 {

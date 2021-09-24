@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\ProcessEngine\Model\Elements;
+namespace Escherchia\ProcessEngineCore\Model\Elements;
 
 abstract class ElementAbstract
 {

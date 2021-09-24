@@ -1,13 +1,12 @@
 <?php
 
-namespace Escherchia\ProcessEngine\Model;
+namespace Escherchia\ProcessEngineCore\Model;
 
-use Escherchia\ProcessEngine\Model\Elements\Activity;
-use Escherchia\ProcessEngine\Model\Elements\ElementInterface;
+use Escherchia\ProcessEngineCore\Model\Elements\Activity;
+use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
 
 class ModelBuilder
 {
-
     /**
      * @var Model
      */
@@ -56,6 +55,7 @@ class ModelBuilder
             }
         }
     }
+
     /**
      * @param array $activities
      */

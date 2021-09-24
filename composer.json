@@ -1,5 +1,5 @@
 {
-    "name": "escherchia/business-process-engine",
+    "name": "escherchia/process-engine-core",
     "description": "A Simple PHP Engine for Simple Business Processes",
     "type": "library",
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Escherchia\\ProcessEngine\\": "src/"
+            "Escherchia\\ProcessEngineCore\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -26,7 +26,7 @@
     "require": {},
     "scripts": {
         "post-package-install": [
-            "php -r \"copy('src/config.php', '../../config/business-process-engine.php');\""
+            "php -r \"copy('src/config.php', '../../config/business-process-engine-core.php');\""
         ]
     }
 }

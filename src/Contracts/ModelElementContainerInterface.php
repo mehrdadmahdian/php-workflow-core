@@ -1,8 +1,8 @@
 <?php
 
-namespace Escherchia\ProcessEngine\Contracts;
+namespace Escherchia\ProcessEngineCore\Contracts;
 
-use Escherchia\ProcessEngine\Model\Elements\ElementInterface;
+use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
 
 interface ModelElementContainerInterface
 {

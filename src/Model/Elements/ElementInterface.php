@@ -1,10 +1,11 @@
 <?php
 
-namespace Escherchia\ProcessEngine\Model\Elements;
+namespace Escherchia\ProcessEngineCore\Model\Elements;
 
 interface ElementInterface
 {
     const STATUS_NOT_STARTED = 'inactive';
+
     /**
      * @return string
      */
