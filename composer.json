@@ -1,0 +1,14 @@
+{
+    "name": "escherchia/business-process-engine",
+    "description": "A Simple Engine for Simple Business Processes",
+    "type": "library",
+    "license": "mIT",
+    "authors": [
+        {
+            "name": "mehrdad Mahdian",
+            "email": "escherchia88@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
