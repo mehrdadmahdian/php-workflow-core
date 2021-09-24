@@ -18,5 +18,5 @@ interface EngineInterface
      * @param string $action
      * @param array $params
      */
-    public function runAction(string $action, array $params): void;
+    public function runAction(string $action, array $params = array()): void;
 }

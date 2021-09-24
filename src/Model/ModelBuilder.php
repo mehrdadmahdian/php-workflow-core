@@ -54,7 +54,7 @@ class ModelBuilder
                 $this->model->addElement(
                     new Activity(
                         $activity['name'],
-                        isset($activity['status']) ? $activity['status'] : ElementInterface::STATUS_NOT_STARTED
+                        isset($activity['status']) ? $activity['status'] : ElementInterface::STATUS_INACTIVE
                     )
                 );
             }

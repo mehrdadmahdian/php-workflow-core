@@ -12,7 +12,7 @@ class ProcessEngineCoreFacade
     /**
      * @throws Exceptions\ProcessModelConfigurationIsNotValid
      */
-    public function buildProcessModel(array $configuration): Model
+    public static function buildProcessModel(array $configuration): Model
     {
         return ModelBuilder::buildFromArray($configuration);
     }
@@ -20,8 +20,9 @@ class ProcessEngineCoreFacade
     /**
      * @param string $action
      * @param array $params
+     * @throws Exceptions\ActionNotFoundException
      */
-    public function runEngineAction(ModelInterface $model, string $action, array $params = array())
+    public static function runEngineAction(ModelInterface $model, string $action, array $params = array())
     {
         $engine = new Engine($model);
         $engine->runAction($action, $params);

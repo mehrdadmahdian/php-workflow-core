@@ -37,4 +37,12 @@ class Model implements ModelInterface
     {
         return $this->modelElementContainer->get($key);
     }
+
+    /**
+     * @return ModelElementContainerInterface
+     */
+    public function getModelElementContainer(): ModelElementContainerInterface
+    {
+        return $this->modelElementContainer;
+    }
 }

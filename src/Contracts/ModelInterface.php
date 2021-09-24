@@ -22,4 +22,9 @@ interface ModelInterface
      */
     public function getElement(string $key): ElementInterface;
 
+    /**
+     * @return ModelElementContainerInterface
+     */
+    public function getModelElementContainer(): ModelElementContainerInterface;
+
 }

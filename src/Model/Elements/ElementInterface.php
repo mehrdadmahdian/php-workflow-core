@@ -4,7 +4,9 @@ namespace Escherchia\ProcessEngineCore\Model\Elements;
 
 interface ElementInterface
 {
-    const STATUS_NOT_STARTED = 'inactive';
+    const STATUS_INACTIVE = 'inactive';
+    const STATUS_ACTIVE = 'active';
+    const STATUS_DONE = 'done';
 
     /**
      * @return string
@@ -45,4 +47,15 @@ interface ElementInterface
      * @param string $key
      */
     public function removeTarget(string $key): void;
+
+    /**
+     * @return array
+     */
+    public function getSources(): array;
+
+
+    /**
+     * @return array
+     */
+    public function getTargets(): array;
 }

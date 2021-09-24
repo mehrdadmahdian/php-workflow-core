@@ -5,6 +5,7 @@ namespace Escherchia\ProcessEngineCore\Engine;
 use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
 use Escherchia\ProcessEngineCore\Contracts\EngineInterface;
 use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
+use Escherchia\ProcessEngineCore\Engine\Actions\Start;
 use Escherchia\ProcessEngineCore\Engine\Actions\Transition;
 use Escherchia\ProcessEngineCore\Exceptions\ActionNotFoundException;
 
@@ -36,27 +37,15 @@ class Engine implements EngineInterface
      * @param array $params
      * @throws \Escherchia\ProcessEngineCore\Exceptions\ActionNotFoundException
      */
-    public function runAction(string $action, array $params): void
+    public function runAction(string $action, array $params = array()): void
     {
-        $action = $this->actionHandlerFactory($action, $params);
-        $action->run();
-    }
-
-    /**
-     * @param string $type
-     * @param array $params
-     * @return ActionInterface
-     * @throws ActionNotFoundException
-     */
-    private function actionHandlerFactory(string $type, array $params = array()): ActionInterface
-    {
-        $actionTypeClass = static::getActionClass($type);
+        $actionTypeClass = static::getActionClass($action);
 
         /** @var ActionInterface $actionTypeClass */
         $action =  new $actionTypeClass($params);
         $action->setEngine($this);
 
-        return $action;
+        $action->run();
     }
 
     /**
@@ -68,6 +57,7 @@ class Engine implements EngineInterface
     {
         $list = [
             'transition' => Transition::class,
+            'start'      => Start::class,
         ];
 
         if (isset($list[$type])) {

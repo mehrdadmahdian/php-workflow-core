@@ -100,4 +100,20 @@ abstract class ElementAbstract
             unset($this->targets[$key]);
         }
     }
+
+    /**
+     * @return array
+     */
+    public function getSources(): array
+    {
+        return $this->sources;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTargets(): array
+    {
+        return $this->targets;
+    }
 }
