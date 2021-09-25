@@ -19,7 +19,7 @@
   </ol>
 </details>
 
-#Installation
+# Installation
 
 Simply run composer require command to include this library in your project
 ```shell script
@@ -28,7 +28,7 @@ Simply run composer require command to include this library in your project
 
 to access to library feature, this namespace should be used: `Escherchia\ProcessEngineCore`
 
-#Process Main Concepts
+# Process Main Concepts
 
 It is assumed that process is made up of multiple activity blocks.
 
