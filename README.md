@@ -148,6 +148,8 @@ Project Link: [PHP Process Engine Core](https://github.com/escherchia/process-en
 - missing tests
 - custom action support
 - support published configurations file. 
+- configuration validator
+- action validator implementation
 
 # Suggested Features to contribute
 - wrapper for laravel and other php frameworks
