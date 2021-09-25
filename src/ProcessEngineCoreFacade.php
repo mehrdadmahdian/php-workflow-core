@@ -22,9 +22,11 @@ class ProcessEngineCoreFacade
      * @param array $params
      * @throws Exceptions\ActionNotFoundException
      */
-    public static function runEngineAction(ModelInterface $model, string $action, array $params = array())
+    public static function runEngineAction(ModelInterface $model, string $action, array $params = array()): ModelInterface
     {
         $engine = new Engine($model);
         $engine->runAction($action, $params);
+
+        return $engine->getModel();
     }
 }
