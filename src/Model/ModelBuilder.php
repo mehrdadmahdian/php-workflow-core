@@ -41,6 +41,10 @@ class ModelBuilder
             isset($configuration['activities']) ? $configuration['activities'] : []
         );
 
+        $modelBuilder->registerObservers(
+            isset($configuration['activities']) ? $configuration['activities'] : []
+        );
+
         return $modelBuilder->model;
     }
 
@@ -84,6 +88,24 @@ class ModelBuilder
                             $activityElement->addTarget($targetElement);
                         }
                     }
+                }
+            }
+        }
+    }
+
+    /**
+     * @param array $configuration
+     */
+    private function registerObservers(array $activities = []): void
+    {
+        if (count($activities)) {
+            foreach ($activities as $activity) {
+                if (isset($activity['observers']) and count($activity['observers'])) {
+                    $activityElement = $this->model->getElement($activity['name']);
+                    foreach ($activity['observers'] as $observerClass) {
+                        $activityElement->attach(new $observerClass());
+                    }
+
                 }
             }
         }

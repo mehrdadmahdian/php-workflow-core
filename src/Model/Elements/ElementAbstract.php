@@ -2,28 +2,34 @@
 
 namespace Escherchia\ProcessEngineCore\Model\Elements;
 
+use Escherchia\ProcessEngineCore\Contracts\ActivityObserverInterface;
+
 abstract class ElementAbstract
 {
     /**
      * @var string
      */
-    private $status;
+    protected $status;
 
     /**
      * @var string
      */
-    private $name;
+    protected $name;
 
     /**
      * @var array
      */
-    private $sources = array();
+    protected $sources = array();
 
     /**
      * @var array
      */
-    private $targets = array();
+    protected $targets = array();
 
+    /**
+     * @var array
+     */
+    protected $observers = array();
     /**
      * @return string
      */
@@ -46,7 +52,7 @@ abstract class ElementAbstract
     public function updateStatus(string $status)
     {
         $this->status = $status;
-        //todo: call observers
+        $this->notify();
     }
 
     /**
@@ -115,5 +121,22 @@ abstract class ElementAbstract
     public function getTargets(): array
     {
         return $this->targets;
+    }
+
+    /* Methods */
+    public function attach(ActivityObserverInterface $observer): void
+    {
+        $this->observers[] = $observer;
+    }
+
+    /**
+     *
+     */
+    public function notify(): void
+    {
+        /** @var ActivityObserverInterface $observer */
+        foreach ($this->observers as $observer) {
+            $observer->update($this);
+        }
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Escherchia\ProcessEngineCore\Model\Elements;
 
+use Escherchia\ProcessEngineCore\Contracts\ActivityObserverInterface;
+
 interface ElementInterface
 {
     const STATUS_INACTIVE = 'inactive';
@@ -58,4 +60,13 @@ interface ElementInterface
      * @return array
      */
     public function getTargets(): array;
+
+    /* Methods */
+    public function attach(ActivityObserverInterface $observer): void;
+
+    /**
+     *
+     */
+    public function notify(): void;
+
 }
