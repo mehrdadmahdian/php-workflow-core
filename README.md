@@ -86,7 +86,7 @@ Process model could be built using package built-in facade method.
     $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
 ```
 
-##Actions
+## Actions
 client could run engine action using built-in facade too:
 
 ```php
@@ -96,7 +96,7 @@ client could run engine action using built-in facade too:
 after each action type, updated model is accessible. Updated model data must be persisted by library client if it is needed.
 
 Two built-in actions are supported in this library and each one has its own params.
-###Start Action
+### Start Action
 No Parameter is needed in this type of action
 ```php
     use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
@@ -106,7 +106,7 @@ No Parameter is needed in this type of action
     );
 ```
 
-###Transition Action
+### Transition Action
 ```php
     use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
     $model = ProcessEngineCoreFacade::runEngineAction(
@@ -116,7 +116,7 @@ No Parameter is needed in this type of action
      );
 ```
 
-##Observers
+## Observers
 No description yet.
 
 <!-- CONTRIBUTING -->
