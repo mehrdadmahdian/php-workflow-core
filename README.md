@@ -1,7 +1,7 @@
-<h2 align="center">PHP Engine For Simple Business Processes</h3>
+<h2 align="center">PHP Engine For Simple Business Workflows</h3>
 
-<p align="center"> This is an amazing process engine to interact with your simple business processes.</p>
-<p align="center">This core build your business process model using simple activity array of configuration. Code client can run different actions on built process model and update model status.</p>
+<p align="center"> This is an amazing workflow engine to interact with your simple business workflows.</p>
+<p align="center">This core build your business workflow model using simple activity array of configuration. Code client can run different actions on built process model and update model status.</p>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -9,7 +9,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#Installation">Installation</a></li>
-    <li><a href="#Process Main Concepts">Process Main Concepts</a></li>
+    <li><a href="#Workflow Main Concepts">Process Main Concepts</a></li>
     <li><a href="#Usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#Licence">Licence</a></li>
@@ -19,16 +19,16 @@
   </ol>
 </details>
 
-#Installation
+# Installation
 
 Simply run composer require command to include this library in your project
 ```shell script
-    composer require escherchia/process-engine-core
+    composer require mehrdadmahdian/php-workflow-core
 ```
 
 to access to library feature, this namespace should be used: `Escherchia\ProcessEngineCore`
 
-#Process Main Concepts
+# Process Main Concepts
 
 It is assumed that process is made up of multiple activity blocks.
 
@@ -86,7 +86,7 @@ Process model could be built using package built-in facade method.
     $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
 ```
 
-##Actions
+## Actions
 client could run engine action using built-in facade too:
 
 ```php
@@ -96,7 +96,7 @@ client could run engine action using built-in facade too:
 after each action type, updated model is accessible. Updated model data must be persisted by library client if it is needed.
 
 Two built-in actions are supported in this library and each one has its own params.
-###Start Action
+### Start Action
 No Parameter is needed in this type of action
 ```php
     use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
@@ -106,7 +106,7 @@ No Parameter is needed in this type of action
     );
 ```
 
-###Transition Action
+### Transition Action
 ```php
     use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
     $model = ProcessEngineCoreFacade::runEngineAction(
@@ -116,7 +116,7 @@ No Parameter is needed in this type of action
      );
 ```
 
-##Observers
+## Observers
 No description yet.
 
 <!-- CONTRIBUTING -->
@@ -148,6 +148,8 @@ Project Link: [PHP Process Engine Core](https://github.com/escherchia/process-en
 - missing tests
 - custom action support
 - support published configurations file. 
+- configuration validator
+- action validator implementation
 
 # Suggested Features to contribute
 - wrapper for laravel and other php frameworks
