@@ -1,5 +1,5 @@
 {
-    "name": "escherchia/process-engine-core",
+    "name": "mehrdadmahdian/php-workflow-core",
     "description": "A Simple PHP Engine for Simple Business Processes",
     "type": "library",
     "license": "MIT",
@@ -23,10 +23,12 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "orchestra/testbench": "*"
+    },
     "scripts": {
         "post-package-install": [
-            "php -r \"copy('src/config.php', '../../config/business-process-engine-core.php');\""
+            "php -r \"copy('src/config.php', '../../config/php-workflow-core.php');\""
         ]
     }
 }
