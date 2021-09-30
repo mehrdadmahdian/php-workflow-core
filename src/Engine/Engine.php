@@ -60,8 +60,12 @@ class Engine implements EngineInterface
             'start'      => Start::class,
         ];
 
-        if (isset($list[$type])) {
-            return $list[$type];
+        if (class_exists($type) and in_array(ActionInterface::class, class_implements($type))) {
+            return $type;
+        } else {
+            if (isset($list[$type])) {
+                return $list[$type];
+            }
         }
 
         throw new ActionNotFoundException();

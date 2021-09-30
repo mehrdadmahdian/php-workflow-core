@@ -60,8 +60,11 @@ Code Client decided where to load configuration. it can be loaded from permanent
                'sources' => [],
                'targets' => ['act2'],
 //               'status'  => ElementInterface::STATUS_INACTIVE,
-               'observers' => [ActivitySampleObserver::class]
-
+               'observers' => [ActivitySampleObserver::class],
+               'extra-actions' => [
+                    SomeActionTypeWhichImplementsActionInterface1::class,
+                    SomeActionTypeWhichImplementsActionInterface2::class
+                ]           
            ],
            [
                'name' => 'act2',
@@ -116,6 +119,23 @@ No Parameter is needed in this type of action
      );
 ```
 
+### Extra Actions
+Inside of built in actions of workflow core, we can run desired action which is implements `ActionInterface`.
+To do that, action class must be fed to `runEngineAction` like this:
+```php
+    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
+    $parameters = [
+        //key: //value,
+        //key2: //value2,
+        ...
+    ];         
+    $model = ProcessEngineCoreFacade::runEngineAction(
+        $model,
+        \Path\To\My\Custom\Action::class,
+        $parameters
+     );
+```
+
 ## Observers
 No description yet.
 
@@ -141,12 +161,13 @@ Distributed under the MIT License.
 
 Mehrdad Mahdian: [Gmail](escherchia88@gmail.com)
 
-Project Link: [PHP Process Engine Core](https://github.com/escherchia/process-engine-core)
+Project Link: [PHP Workflow Core](https://github.com/escherchia/process-engine-core)
 
 
 # Todo
 - missing tests
 - custom action support
+- get available actions from activity
 - support published configurations file. 
 - configuration validator
 - action validator implementation
