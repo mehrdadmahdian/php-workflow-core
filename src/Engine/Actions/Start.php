@@ -31,4 +31,9 @@ class Start extends ActionAbstract  implements ActionInterface
             }
         }
     }
+
+    public static function getActionKey(): string
+    {
+        return 'start';
+    }
 }

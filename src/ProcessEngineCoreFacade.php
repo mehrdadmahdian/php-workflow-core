@@ -29,4 +29,15 @@ class ProcessEngineCoreFacade
 
         return $engine->getModel();
     }
+
+    /**
+     * @param ModelInterface $model
+     * @param string $activityKey
+     * @return array
+     */
+    public static function getActivityActions(ModelInterface $model, string $activityKey): array
+    {
+        $activity = $model->getElement($activityKey);
+        return $activity->getActions();
+    }
 }

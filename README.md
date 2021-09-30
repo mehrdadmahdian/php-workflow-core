@@ -96,7 +96,15 @@ client could run engine action using built-in facade too:
     use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
     $model = ProcessEngineCoreFacade::runEngineAction($model, $action, $params);
 ```
-after each action type, updated model is accessible. Updated model data must be persisted by library client if it is needed.
+after each action type, updated model is accessible. Updated model data must be persisted by client if it is needed.
+
+to find thant which actions each activity has, we can use this code: 
+```php
+    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
+    $model = ProcessEngineCoreFacade::getActivityActions($model, $myActivityKey);
+```
+it will return list of available actions with their required parameters. 
+
 
 Two built-in actions are supported in this library and each one has its own params.
 ### Start Action
@@ -115,11 +123,11 @@ No Parameter is needed in this type of action
     $model = ProcessEngineCoreFacade::runEngineAction(
         $model,
         'transition',
-        ['current_activity_key' => 'act1', 'target_activity_key' => 'act2']
+        ['currentActivityKey' => 'act1', 'targetActivityKey' => 'act2']
      );
 ```
 
-### Extra Actions
+## Extra Actions
 Inside of built in actions of workflow core, we can run desired action which is implements `ActionInterface`.
 To do that, action class must be fed to `runEngineAction` like this:
 ```php
@@ -166,7 +174,6 @@ Project Link: [PHP Workflow Core](https://github.com/escherchia/process-engine-c
 
 # Todo
 - missing tests
-- custom action support
 - get available actions from activity
 - support published configurations file. 
 - configuration validator

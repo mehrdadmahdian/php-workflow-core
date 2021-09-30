@@ -33,10 +33,10 @@ class Transition extends ActionAbstract implements ActionInterface
     {
         $model = $this->getEngine()->getModel();
 
-        if ($currentElement = $model->getElement($this->params['current_element_key'])) {
+        if ($currentElement = $model->getElement($this->params['currentActivityKey'])) {
             $this->currentElement = $currentElement;
         }
-        if ($targetElement = $model->getElement($this->params['target_element_key'])) {
+        if ($targetElement = $model->getElement($this->params['targetActivityKey'])) {
             $this->targetElement = $targetElement;
         }
 
@@ -46,5 +46,10 @@ class Transition extends ActionAbstract implements ActionInterface
         }  else {
             throw new \Exception('current element is not in active status');
         }
+    }
+
+    public static function getActionKey(): string
+    {
+        return 'transition';
     }
 }
