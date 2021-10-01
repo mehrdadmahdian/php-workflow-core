@@ -34,9 +34,9 @@ to access to library feature, this namespace should be used: `Escherchia\PhpWork
 <!-- USAGE EXAMPLES -->
 # Usage
 
-An example of process configuration array is introduced here. This is a process with 3 activities which is not started yet and all activities has null or inactive status. 
-
-Code Client decided where to load configuration. it can be loaded from permanent storage, or it could be loaded statically form a file. 
+An example of process configuration array is introduced here. This is a process with 3 activities which is not started yet and all activities has null or inactive status.
+![alt Simple Process Example](simple.jpg)
+Code Client decided where to load configuration. It can be loaded from permanent storage, or it could be loaded statically form a file.  
 ```php
     $configuration = [
        'activities' => [
@@ -61,7 +61,7 @@ Code Client decided where to load configuration. it can be loaded from permanent
                'name' => 'act3',
                'sources' => ['act2'],
                'targets' => [],
-//               'status'  => ElementInterface::STATUS_INACTIVE
+               'status'  => ElementInterface::STATUS_INACTIVE
            ],
        ]
     ];
