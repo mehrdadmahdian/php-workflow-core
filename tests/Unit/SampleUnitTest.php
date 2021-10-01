@@ -10,6 +10,7 @@ class SampleUnitTest extends TestCase
     public function it_tests_nothing()
     {
         $this->assertTrue(true);
+        $this->assertTrue(true);
     }
 
 }
