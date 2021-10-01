@@ -4,21 +4,23 @@
 <p align="center"> This is an amazing workflow engine to interact with your simple business workflows.</p>
 <p align="center">This core build your business workflow model using simple activity array of configuration. Code client can run different actions on built process model and update model status.</p>
 
+# Process Main Concepts
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#Installation">Installation</a></li>
-    <li><a href="#Workflow Main Concepts">Process Main Concepts</a></li>
-    <li><a href="#Usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#Licence">Licence</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#todo">Todo List</a></li>
-    <li><a href="#Suggested Features">Suggested Feature</a></li>
-  </ol>
-</details>
+![alt Simple Process Example](spe.jpg)
+
+It is assumed that each process is made up of multiple activity blocks which are connected to each other using transition flows.
+
+- Each activity has its own unique name. This is the key to reach activity element.
+- Each activity could be connected to multiple sources. Sources must be in type of activity.
+    - An activity could have no source. It means on start action, this activity's status will be updated to `active` status
+- Each activity could be connected to multiple targets. Targets must be in type of activity.
+    - An activity could have no target. It means process is in last activity state.
+- Each activity has its current status. statuses may be between one of these statuses: `active`, `inactive`, `done`.
+- At the start of process all activities have `inactive` status.
+- When activity target is triggered, the target activity goes to `active` status.
+- Each process only could have one `active` activity at a time.
+- Each activity could have its own observers. while updating activity status, observer will be notified.
+- This engine does not support conditional or parallel flows.
 
 # Installation
 
@@ -28,24 +30,6 @@ Simply run composer require command to include this library in your project
 ```
 
 to access to library feature, this namespace should be used: `Escherchia\PhpWorkflowCore`
-
-# Process Main Concepts
-
-It is assumed that process is made up of multiple activity blocks.
-
-- Each activity has its own unique name. This is the key to reach activity element.
-- Each activity could be connected to multiple sources. Sources must be in type of activity.
-  - An activity could have no source. It means on start action, this activity's status will be updated to `active` status   
-- Each activity could be connected to multiple targets. Targets must be in type of activity.
-  - An activity could have no target. It means process is in last activity state.
-- Each activity has its current status. statuses may be between one of these statuses: `active`, `inactive`, `done`.
-- At the start of process all activities have `inactive` status.
-- When activity target is triggered, the target activity goes to `active` status. 
-- Each activity could have its own observers. while updating activity status, observer will be notified. 
-- This engine does not support conditional or parallel flows.
-
-An example of process is something like this figure:
-![alt Simple Process Example](spe.jpg)
 
 <!-- USAGE EXAMPLES -->
 # Usage
