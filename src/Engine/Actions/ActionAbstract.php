@@ -1,10 +1,10 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Engine\Actions;
+namespace Escherchia\PhpWorkflowCore\Engine\Actions;
 
-use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
-use Escherchia\ProcessEngineCore\Contracts\EngineInterface;
-use Escherchia\ProcessEngineCore\Exceptions\ActionParametersIsNotValid;
+use Escherchia\PhpWorkflowCore\Contracts\ActionInterface;
+use Escherchia\PhpWorkflowCore\Contracts\EngineInterface;
+use Escherchia\PhpWorkflowCore\Exceptions\ActionParametersIsNotValid;
 use Illuminate\Notifications\Action;
 
 abstract class ActionAbstract

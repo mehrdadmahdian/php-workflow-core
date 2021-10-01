@@ -1,10 +1,10 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Model;
+namespace Escherchia\PhpWorkflowCore\Model;
 
-use Escherchia\ProcessEngineCore\Contracts\ModelElementContainerInterface;
-use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
-use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ModelElementContainerInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ModelInterface;
+use Escherchia\PhpWorkflowCore\Model\Elements\ElementInterface;
 
 class Model implements ModelInterface
 {

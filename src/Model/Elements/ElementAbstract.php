@@ -1,9 +1,9 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Model\Elements;
+namespace Escherchia\PhpWorkflowCore\Model\Elements;
 
-use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
-use Escherchia\ProcessEngineCore\Contracts\ActivityObserverInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ActionInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ActivityObserverInterface;
 
 abstract class ElementAbstract
 {
