@@ -35,7 +35,7 @@ class Engine implements EngineInterface
     /**
      * @param string $action
      * @param array $params
-     * @throws \Escherchia\ProcessEngineCore\Exceptions\ActionNotFoundException
+     * @throws \Escherchia\PhpWorkflowCore\Exceptions\ActionNotFoundException
      */
     public function runAction(string $action, array $params = array()): void
     {
