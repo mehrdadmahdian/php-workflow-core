@@ -1,9 +1,9 @@
 <?php
 
-use Escherchia\ProcessEngineCore\Contracts\ActivityObserverInterface;
-use Escherchia\ProcessEngineCore\Model\Elements\Activity;
-use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
-use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
+use Escherchia\PhpWorkflowCore\Contracts\ActivityObserverInterface;
+use Escherchia\PhpWorkflowCore\Model\Elements\Activity;
+use Escherchia\PhpWorkflowCore\Model\Elements\ElementInterface;
+use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
 use PHPUnit\Framework\TestCase;
 
 class ObserverCallTest extends TestCase
@@ -37,7 +37,7 @@ class ObserverCallTest extends TestCase
                 ],
             ]
         ];
-        $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
+        $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
         $this->expectException(MyException::class);
         $this->expectExceptionMessage('this is from my observer');
         $model->getElement('act1')->updateStatus(ElementInterface::STATUS_ACTIVE);

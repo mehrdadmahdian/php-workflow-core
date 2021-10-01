@@ -1,13 +1,13 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore;
+namespace Escherchia\PhpWorkflowCore;
 
-use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
-use Escherchia\ProcessEngineCore\Engine\Engine;
-use Escherchia\ProcessEngineCore\Model\Model;
-use Escherchia\ProcessEngineCore\Model\ModelBuilder;
+use Escherchia\PhpWorkflowCore\Contracts\ModelInterface;
+use Escherchia\PhpWorkflowCore\Engine\Engine;
+use Escherchia\PhpWorkflowCore\Model\Model;
+use Escherchia\PhpWorkflowCore\Model\ModelBuilder;
 
-class ProcessEngineCoreFacade
+class PhpWorkflowCoreFacade
 {
     /**
      * @throws Exceptions\ProcessModelConfigurationIsNotValid

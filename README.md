@@ -1,4 +1,5 @@
-<h2 align="center">PHP Workflow Engine For Simple Business Workflows</h3>
+<h2 align="center">PHP Workflow Engine For Simple Business Workflows</h2>
+<h3 align="center">(Under Development - Do Not Use This)</h3>
 
 <p align="center"> This is an amazing workflow engine to interact with your simple business workflows.</p>
 <p align="center">This core build your business workflow model using simple activity array of configuration. Code client can run different actions on built process model and update model status.</p>
@@ -26,7 +27,7 @@ Simply run composer require command to include this library in your project
     composer require mehrdadmahdian/php-workflow-core
 ```
 
-to access to library feature, this namespace should be used: `Escherchia\ProcessEngineCore`
+to access to library feature, this namespace should be used: `Escherchia\PhpWorkflowCore`
 
 # Process Main Concepts
 
@@ -85,23 +86,23 @@ Code Client decided where to load configuration. it can be loaded from permanent
 Process model could be built using package built-in facade method.
 
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
-    $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
 ```
 
 ## Actions
 client could run engine action using built-in facade too:
 
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
-    $model = ProcessEngineCoreFacade::runEngineAction($model, $action, $params);
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    $model = PhpWorkflowCoreFacade::runEngineAction($model, $action, $params);
 ```
 after each action type, updated model is accessible. Updated model data must be persisted by client if it is needed.
 
 to find thant which actions each activity has, we can use this code: 
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
-    $model = ProcessEngineCoreFacade::getActivityActions($model, $myActivityKey);
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    $model = PhpWorkflowCoreFacade::getActivityActions($model, $myActivityKey);
 ```
 it will return list of available actions with their required parameters. 
 
@@ -110,8 +111,8 @@ Two built-in actions are supported in this library and each one has its own para
 ### Start Action
 No Parameter is needed in this type of action
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
-    $model = ProcessEngineCoreFacade::runEngineAction(
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    $model = PhpWorkflowCoreFacade::runEngineAction(
         $model, //suppose that model is defined previously in the code. mdoel is in type of ModelInterface 
         'start'
     );
@@ -119,8 +120,8 @@ No Parameter is needed in this type of action
 
 ### Transition Action
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
-    $model = ProcessEngineCoreFacade::runEngineAction(
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    $model = PhpWorkflowCoreFacade::runEngineAction(
         $model,
         'transition',
         ['currentActivityKey' => 'act1', 'targetActivityKey' => 'act2']
@@ -131,13 +132,13 @@ No Parameter is needed in this type of action
 Inside of built in actions of workflow core, we can run desired action which is implements `ActionInterface`.
 To do that, action class must be fed to `runEngineAction` like this:
 ```php
-    use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
+    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $parameters = [
         //key: //value,
         //key2: //value2,
         ...
     ];         
-    $model = ProcessEngineCoreFacade::runEngineAction(
+    $model = PhpWorkflowCoreFacade::runEngineAction(
         $model,
         \Path\To\My\Custom\Action::class,
         $parameters

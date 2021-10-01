@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Contracts;
+namespace Escherchia\PhpWorkflowCore\Contracts;
 
 interface ActionInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
-use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
-use Escherchia\ProcessEngineCore\Engine\Actions\ActionAbstract;
-use Escherchia\ProcessEngineCore\Model\Elements\ElementInterface;
-use Escherchia\ProcessEngineCore\ProcessEngineCoreFacade;
+use Escherchia\PhpWorkflowCore\Contracts\ActionInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ModelInterface;
+use Escherchia\PhpWorkflowCore\Engine\Actions\ActionAbstract;
+use Escherchia\PhpWorkflowCore\Model\Elements\ElementInterface;
+use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
 use PHPUnit\Framework\TestCase;
 
 
@@ -37,7 +37,7 @@ class ModelBuilderTest extends TestCase
                 ],
             ]
         ];
-        $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
+        $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
 
         $this->assertInstanceOf(ModelInterface::class, $model);
         $this->assertCount(3, $model->getModelElementContainer()->all());
@@ -78,7 +78,7 @@ class ModelBuilderTest extends TestCase
                 ],
             ]
         ];
-        $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
+        $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
         $act1Element = $model->getElement('act1');
 
         $this->assertCount(0, $act1Element->getSources());
@@ -122,7 +122,7 @@ class ModelBuilderTest extends TestCase
                 ]
             ]
         ];
-        $model = ProcessEngineCoreFacade::buildProcessModel($configuration);
+        $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
         $this->assertEquals(ElementInterface::STATUS_ACTIVE, $model->getElement('act1')->getStatus());
     }
 }

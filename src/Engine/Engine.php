@@ -1,13 +1,13 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Engine;
+namespace Escherchia\PhpWorkflowCore\Engine;
 
-use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
-use Escherchia\ProcessEngineCore\Contracts\EngineInterface;
-use Escherchia\ProcessEngineCore\Contracts\ModelInterface;
-use Escherchia\ProcessEngineCore\Engine\Actions\Start;
-use Escherchia\ProcessEngineCore\Engine\Actions\Transition;
-use Escherchia\ProcessEngineCore\Exceptions\ActionNotFoundException;
+use Escherchia\PhpWorkflowCore\Contracts\ActionInterface;
+use Escherchia\PhpWorkflowCore\Contracts\EngineInterface;
+use Escherchia\PhpWorkflowCore\Contracts\ModelInterface;
+use Escherchia\PhpWorkflowCore\Engine\Actions\Start;
+use Escherchia\PhpWorkflowCore\Engine\Actions\Transition;
+use Escherchia\PhpWorkflowCore\Exceptions\ActionNotFoundException;
 
 class Engine implements EngineInterface
 {

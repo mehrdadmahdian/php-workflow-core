@@ -6,12 +6,12 @@
     "authors": [
         {
             "name": "Mehrdad Mahdian",
-            "email": "escherchia88@gmail.com"
+            "email": "mahdian.mhd@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Escherchia\\ProcessEngineCore\\": "src/"
+            "Escherchia\\PhpWorkflowCore\\": "src/"
         },
         "files": [
             "src/helpers.php"

@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\ProcessEngineCore\Exceptions;
+namespace Escherchia\PhpWorkflowCore\Exceptions;
 
 class ProcessModelConfigurationIsNotValid extends \Exception
 {
