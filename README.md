@@ -1,4 +1,4 @@
-<h2 align="center">PHP Engine For Simple Business Workflows</h3>
+<h2 align="center">PHP Workflow Engine For Simple Business Workflows</h3>
 
 <p align="center"> This is an amazing workflow engine to interact with your simple business workflows.</p>
 <p align="center">This core build your business workflow model using simple activity array of configuration. Code client can run different actions on built process model and update model status.</p>
