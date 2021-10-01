@@ -18,9 +18,9 @@ interface ModelInterface
 
     /**
      * @param string $key
-     * @return ElementInterface
+     * @return null|ElementInterface
      */
-    public function getElement(string $key): ElementInterface;
+    public function getElement(string $key): ?ElementInterface;
 
     /**
      * @return ModelElementContainerInterface

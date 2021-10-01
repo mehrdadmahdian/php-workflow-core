@@ -23,12 +23,9 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {
-        "orchestra/testbench": "*"
+    "require-dev": {
+        "phpunit/phpunit": "*"
     },
     "scripts": {
-        "post-package-install": [
-            "php -r \"copy('src/config.php', '../../config/php-workflow-core.php');\""
-        ]
     }
 }

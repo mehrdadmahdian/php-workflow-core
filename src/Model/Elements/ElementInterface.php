@@ -69,4 +69,14 @@ interface ElementInterface
      */
     public function notify(): void;
 
+    /**
+     * @param string $extraActionClass
+     */
+    public function addExtraAction(string $extraActionClass): void;
+
+    /**
+     * @return array
+     */
+    public function getActions(): array;
+
 }

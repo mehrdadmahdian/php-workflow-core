@@ -45,6 +45,10 @@ class ModelBuilder
             isset($configuration['activities']) ? $configuration['activities'] : []
         );
 
+        $modelBuilder->registerExtraActions(
+            isset($configuration['activities']) ? $configuration['activities'] : []
+        );
+
         return $modelBuilder->model;
     }
 
@@ -104,6 +108,24 @@ class ModelBuilder
                     $activityElement = $this->model->getElement($activity['name']);
                     foreach ($activity['observers'] as $observerClass) {
                         $activityElement->attach(new $observerClass());
+                    }
+
+                }
+            }
+        }
+    }
+
+    /**
+     * @param array $configuration
+     */
+    private function registerExtraActions(array $activities = []): void
+    {
+        if (count($activities)) {
+            foreach ($activities as $activity) {
+                if (isset($activity['extra-actions']) and count($activity['extra-actions'])) {
+                    $activityElement = $this->model->getElement($activity['name']);
+                    foreach ($activity['extra-actions'] as $extraActionClass) {
+                        $activityElement->addExtraAction($extraActionClass);
                     }
 
                 }

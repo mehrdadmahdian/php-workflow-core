@@ -4,6 +4,11 @@ namespace Escherchia\ProcessEngineCore\Contracts;
 
 interface ActionInterface
 {
+
+    /**
+     * @return string
+     */
+    public static function getActionKey(): string;
     /**
      * @param array $params
      */

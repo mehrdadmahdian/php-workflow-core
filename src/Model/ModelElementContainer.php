@@ -38,6 +38,8 @@ class ModelElementContainer implements ModelElementContainerInterface
         if (isset($this->elements[$key])) {
             return $this->elements[$key];
         }
+
+        return null;
     }
 
     /**

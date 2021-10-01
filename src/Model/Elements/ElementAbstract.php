@@ -2,6 +2,7 @@
 
 namespace Escherchia\ProcessEngineCore\Model\Elements;
 
+use Escherchia\ProcessEngineCore\Contracts\ActionInterface;
 use Escherchia\ProcessEngineCore\Contracts\ActivityObserverInterface;
 
 abstract class ElementAbstract
@@ -19,6 +20,11 @@ abstract class ElementAbstract
     /**
      * @var array
      */
+    protected $extraActions = array();
+
+    /**
+     * @var array
+     */
     protected $sources = array();
 
     /**
@@ -30,6 +36,7 @@ abstract class ElementAbstract
      * @var array
      */
     protected $observers = array();
+
     /**
      * @return string
      */
@@ -69,6 +76,16 @@ abstract class ElementAbstract
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @param string $extraAction
+     */
+    public function addExtraAction(string $extraAction): void
+    {
+        if (in_array(ActionInterface::class, class_implements($extraAction))) {
+            $this->extraActions[] = $extraAction;
+        }
     }
 
     /**
@@ -138,5 +155,36 @@ abstract class ElementAbstract
         foreach ($this->observers as $observer) {
             $observer->update($this);
         }
+    }
+
+    /**
+     * @return array
+     */
+    public function getActions(): array
+    {
+        $actions  = [];
+        $extraActions = $this->extraActions;
+
+        /** @var ElementInterface $targetElement */
+        foreach ($this->getTargets() as $targetElement) {
+            $actions[] = [
+                'key' => 'transition',
+                'params' => [
+                    'currentActivityKey' => $this->getName(),
+                    'targetActivityKey'  => $targetElement->getName(),
+                ]
+            ];
+        }
+
+        /** @var ActionInterface $extraAction */
+        foreach ($extraActions as $extraAction) {
+            $actions[] = [
+                'key' => $extraAction,
+                'params' => [
+                    'currentActivityKey' => $this->getName(),
+                ]
+            ];
+        }
+        return $actions;
     }
 }
