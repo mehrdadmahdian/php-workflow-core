@@ -42,6 +42,9 @@ class Transition extends ActionAbstract implements ActionInterface
 
         if ($this->currentElement->getStatus() == ElementInterface::STATUS_ACTIVE) {
             $this->currentElement->updateStatus(ElementInterface::STATUS_DONE);
+            if (!array_key_exists($this->targetElement->getName(), $this->currentElement->getTargets())) {
+                throw new \Exception('target element of transition is not available in source element.');
+            }
             $this->targetElement->updateStatus(ElementInterface::STATUS_ACTIVE);
         }  else {
             throw new \Exception('current element is not in active status');
