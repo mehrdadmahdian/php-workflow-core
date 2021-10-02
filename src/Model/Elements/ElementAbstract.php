@@ -1,9 +1,9 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Model\Elements;
+namespace MehrdadMahdian\PhpWorkflowCore\Model\Elements;
 
-use Escherchia\PhpWorkflowCore\Contracts\ActionInterface;
-use Escherchia\PhpWorkflowCore\Contracts\ActivityObserverInterface;
+use MehrdadMahdian\PhpWorkflowCore\Contracts\ActionInterface;
+use MehrdadMahdian\PhpWorkflowCore\Contracts\ActivityObserverInterface;
 
 abstract class ElementAbstract
 {

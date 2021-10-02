@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Contracts;
+namespace MehrdadMahdian\PhpWorkflowCore\Contracts;
 
 interface EngineInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Contracts;
+namespace MehrdadMahdian\PhpWorkflowCore\Contracts;
 
-use Escherchia\PhpWorkflowCore\Model\Elements\Activity;
+use MehrdadMahdian\PhpWorkflowCore\Model\Elements\Activity;
 
 interface ActivityObserverInterface
 {

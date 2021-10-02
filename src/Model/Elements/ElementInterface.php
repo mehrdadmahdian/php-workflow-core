@@ -1,8 +1,8 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Model\Elements;
+namespace MehrdadMahdian\PhpWorkflowCore\Model\Elements;
 
-use Escherchia\PhpWorkflowCore\Contracts\ActivityObserverInterface;
+use MehrdadMahdian\PhpWorkflowCore\Contracts\ActivityObserverInterface;
 
 interface ElementInterface
 {
