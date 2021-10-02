@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Escherchia\\PhpWorkflowCore\\": "src/"
+            "MehrdadMahdian\\PhpWorkflowCore\\": "src/"
         },
         "files": [
             "src/helpers.php"

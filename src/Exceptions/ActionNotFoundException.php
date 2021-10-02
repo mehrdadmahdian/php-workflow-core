@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Exceptions;
+namespace MehrdadMahdian\PhpWorkflowCore\Exceptions;
 
 class ActionNotFoundException extends \Exception
 {

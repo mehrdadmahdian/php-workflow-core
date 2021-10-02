@@ -1,10 +1,10 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Model;
+namespace MehrdadMahdian\PhpWorkflowCore\Model;
 
-use Escherchia\PhpWorkflowCore\Exceptions\ProcessModelConfigurationIsNotValid;
-use Escherchia\PhpWorkflowCore\Model\Elements\Activity;
-use Escherchia\PhpWorkflowCore\Model\Elements\ElementInterface;
+use MehrdadMahdian\PhpWorkflowCore\Exceptions\ProcessModelConfigurationIsNotValid;
+use MehrdadMahdian\PhpWorkflowCore\Model\Elements\Activity;
+use MehrdadMahdian\PhpWorkflowCore\Model\Elements\ElementInterface;
 
 class ModelBuilder
 {

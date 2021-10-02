@@ -1,9 +1,9 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Model;
+namespace MehrdadMahdian\PhpWorkflowCore\Model;
 
-use Escherchia\PhpWorkflowCore\Contracts\ModelElementContainerInterface;
-use Escherchia\PhpWorkflowCore\Model\Elements\ElementInterface;
+use MehrdadMahdian\PhpWorkflowCore\Contracts\ModelElementContainerInterface;
+use MehrdadMahdian\PhpWorkflowCore\Model\Elements\ElementInterface;
 
 class ModelElementContainer implements ModelElementContainerInterface
 {

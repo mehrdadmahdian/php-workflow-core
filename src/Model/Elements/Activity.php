@@ -1,6 +1,6 @@
 <?php
 
-namespace Escherchia\PhpWorkflowCore\Model\Elements;
+namespace MehrdadMahdian\PhpWorkflowCore\Model\Elements;
 
 class Activity extends ElementAbstract implements ElementInterface
 {

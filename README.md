@@ -29,7 +29,7 @@ Simply run composer require command to include this library in your project
     composer require mehrdadmahdian/php-workflow-core
 ```
 
-to access to library feature, this namespace should be used: `Escherchia\PhpWorkflowCore`
+to access to library feature, this namespace should be used: `MehrdadMahdian\PhpWorkflowCore`
 
 <!-- USAGE EXAMPLES -->
 # Usage
@@ -70,7 +70,7 @@ Code Client decided where to load configuration. It can be loaded from permanent
 Process model could be built using package built-in facade method.
 
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $model = PhpWorkflowCoreFacade::buildProcessModel($configuration);
 ```
 
@@ -78,14 +78,14 @@ Process model could be built using package built-in facade method.
 client could run engine action using built-in facade too:
 
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $model = PhpWorkflowCoreFacade::runEngineAction($model, $action, $params);
 ```
 after each action type, updated model is accessible. Updated model data must be persisted by client if it is needed.
 
 to find thant which actions each activity has, we can use this code: 
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $model = PhpWorkflowCoreFacade::getActivityActions($model, $myActivityKey);
 ```
 it will return list of available actions with their required parameters. 
@@ -95,7 +95,7 @@ Two built-in actions are supported in this library and each one has its own para
 ### Start Action
 No Parameter is needed in this type of action
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $model = PhpWorkflowCoreFacade::runEngineAction(
         $model, //suppose that model is defined previously in the code. mdoel is in type of ModelInterface 
         'start'
@@ -104,7 +104,7 @@ No Parameter is needed in this type of action
 
 ### Transition Action
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $model = PhpWorkflowCoreFacade::runEngineAction(
         $model,
         'transition',
@@ -116,7 +116,7 @@ No Parameter is needed in this type of action
 Inside of built in actions of workflow core, we can run desired action which is implements `ActionInterface`.
 To do that, action class must be fed to `runEngineAction` like this:
 ```php
-    use Escherchia\PhpWorkflowCore\PhpWorkflowCoreFacade;
+    use MehrdadMahdian\PhpWorkflowCore\PhpWorkflowCoreFacade;
     $parameters = [
         //key: //value,
         //key2: //value2,
